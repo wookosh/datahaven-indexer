@@ -52,7 +52,7 @@ If you receive these errors when indexing:
 ⚠️  Block 8693: State pruned (skipping)
 ```
 
-You will need to wipe your volumes, and rebuilt the containers. 
+You will need to wipe your volumes, and rebuild the containers. 
 
 ## Installation
 
