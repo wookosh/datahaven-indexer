@@ -173,11 +173,17 @@ npm start -- --concurrency=10
 The indexer stores **ALL** blockchain data in MongoDB:
 
 ✅ **Complete Data** - Blocks, extrinsics, and events
+
 ✅ **Automatic Resume** - Continues from last indexed block
+
 ✅ **Progress Saved** - After every single block (zero data loss)
+
 ✅ **Network Resilience** - Infinite retry on network failures
+
 ✅ **Pruned Node Support** - Automatically skips unavailable state
+
 ✅ **Fast Queries** - Indexed MongoDB collections
+
 ✅ **Progress Dashboard** - Real-time indexing statistics
 
 See [INDEXER.md](INDEXER.md) for complete documentation.
