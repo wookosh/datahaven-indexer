@@ -1,0 +1,35 @@
+{
+  "name": "@datahaven/indexer",
+  "version": "1.0.0",
+  "description": "TypeScript library for exploring Polkadot-compatible blockchains, specifically DataHaven",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsx src/index.ts",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "polkadot",
+    "blockchain",
+    "datahaven",
+    "explorer",
+    "substrate"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^24.8.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@polkadot/api": "^16.4.9",
+    "@polkadot/rpc-provider": "^16.4.9",
+    "dotenv": "^17.2.3",
+    "mongodb": "^6.20.0"
+  }
+}
