@@ -44,6 +44,15 @@ sh-user:
       ]
 ```
 
+If you receive these errors when indexing:
+```
+⚠️  Block 8691: State pruned (skipping)
+2025-10-31 15:14:17        RPC-CORE: getRuntimeVersion(at?: BlockHash): RuntimeVersion:: 4003: Client error: Api called for an unknown Block: State already discarded for 0xdd7206b6e37c79be601556f932a2e5b8f03f0d8c04bbf38f906b32c61d4fa184
+2025-10-31 15:14:17        RPC-CORE: getBlock(hash?: BlockHash): SignedBlock:: 4003: Client error: Api called for an unknown Block: State already discarded for 0xdd7206b6e37c79be601556f932a2e5b8f03f0d8c04bbf38f906b32c61d4fa184
+⚠️  Block 8693: State pruned (skipping)
+```
+
+You will need to wipe your volumes, and rebuilt the containers. 
 
 ## Installation
 
