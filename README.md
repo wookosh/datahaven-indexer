@@ -2,6 +2,49 @@
 
 A TypeScript library for exploring Polkadot-compatible blockchains, specifically designed for the DataHaven network.
 
+## IMPORTANT NOTE
+
+If you are using a local datahaven/storage-hub network, in order for this indexer to work, you need to ensure that your `sh-user` has the following command arguments:
+```
+'--state-pruning=archive',
+'--blocks-pruning=archive',
+```
+
+These need to be added in `docker/fullnet-base-template.yml`. When complete, `sh-user` will look like this: 
+
+```
+sh-user:
+    image: storage-hub:local
+    platform: linux/amd64
+    container_name: storage-hub-sh-user-1
+    ports:
+      - '9888:9944'
+      - '30444:30444'
+    volumes:
+      - ./dev-keystores/user:/keystore:rw
+      - ./resource:/res:ro
+    command:
+      [
+        '--dev',
+        '--name=sh-user',
+        '--provider',
+        '--provider-type=user',
+        '--no-hardware-benchmarks',
+        '--unsafe-rpc-external',
+        '--rpc-methods=unsafe',
+        '--port=30444',
+        '--rpc-cors=all',
+        '--node-key=0x13b3b1c917dda506f152816aad4685eefa54fe57792165b31141ac893610b314',
+        '--bootnodes=/ip4/${BSP_IP:-default_bsp_ip}/tcp/30350/p2p/${BSP_PEER_ID:-default_bsp_peer_id}',
+        '--keystore-path=/keystore',
+        '--sealing=manual',
+        '--base-path=/data',
+        '--state-pruning=archive',
+        '--blocks-pruning=archive',
+      ]
+```
+
+
 ## Installation
 
 ```bash
